@@ -5,7 +5,6 @@ import VectorSource from 'ol/source/Vector';
 import View from 'ol/View';
 import XYZ from 'ol/source/XYZ';
 import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import kml from './data/2012-02-10.kml?url';
 
 var key = 'get_your_own_D6rA4zTHduk6KOKTXzGB';
 var attributions =
@@ -22,7 +21,7 @@ var raster = new TileLayer({
 
 var vector = new VectorLayer({
   source: new VectorSource({
-    url: kml,
+    url: './data/2012-02-10.kml',
     format: new KML(),
   }),
 });

@@ -13,7 +13,6 @@ import {register} from 'ol/proj/proj4';
 import GeoJSON from 'ol/format/GeoJSON';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
-import counties from './data/british-isles-counties.geojson?url';
 
 import {Stroke, Style} from 'ol/style';
 
@@ -61,7 +60,7 @@ fetch(urlB)
 
 layers['vector'] = new VectorLayer({
   source: new VectorSource({
-    url: counties,
+    url: './data/british-isles-counties.geojson',
     format: new GeoJSON(),
     attributions: '<a href="https://gist.github.com/duhaime/1d6d5a8dc77c86128fcc1a05a72726c9">Counties, D. Duhaime</a>', 
   }),

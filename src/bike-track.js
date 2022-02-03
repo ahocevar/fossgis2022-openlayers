@@ -9,7 +9,6 @@ import { fromLonLat } from 'ol/proj';
 import OSM from 'ol/source/OSM';
 import VectorSource from 'ol/source/Vector';
 import { Circle, Fill, Stroke, Style } from 'ol/style';
-import backhendl from './data/backhendl.gpx?url';
 import { getVectorContext } from 'ol/render';
 
 var raster = new TileLayer({
@@ -34,7 +33,7 @@ var style = new Style({
 });
 
 var source = new VectorSource({
-  url: backhendl,
+  url: './data/backhendl.gpx',
   format: new GPX()
 });
 
