@@ -1,0 +1,19 @@
+{
+  "name": "fossgis-2022-openlayers",
+  "version": "0.0.0",
+  "scripts": {
+    "postinstall": "nugget https://github.com/hakimel/reveal.js/archive/refs/tags/3.6.0.zip && nunzip 3.6.0.zip -d public && shx rm 3.6.0.zip",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "ol": "^6.12.0",
+    "ol-hashed": "^2.1.0",
+    "proj4": "^2.7.5",
+    "reveal.js": "^4.2.1"
+  }
+}

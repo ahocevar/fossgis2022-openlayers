@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Neues und Unbekanntes in OpenLayers | Vortrag auf der FOSSGIS 2022, Online-Event</title>
+    <meta name="author" content="Marc Jansen">
+    <meta name="author" content="terrestris GmbH &amp; Co. KG">
+    <meta name="author" content="Andreas Hocevar">
+    <meta name="author" content="ahocevar geospatial">
+    <meta name="description" content="Neues und Unbekanntes in OpenLayers | Vortrag auf der FOSSGIS 2022, Online-Event" />
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="reveal">
+
+      <!-- BEGIN OF SLIDES -->
+      <div class="slides">
+
+        <section id="start"
+          data-background-image="./img/ol-logo.svg"
+          data-background-size="auto 90%">
+          <p>&nbsp;</p>
+        </section>
+
+        <section id="title"
+          data-background-image="./img/ol-logo-filter.svg"
+          data-background-size="auto 90%">
+          <h1 style="font-size: 2.1em; margin-bottom: 0.3em;">Neues und Unbekanntes in OpenLayers</h1>
+          <br />
+          <p>
+            <small>Marc Jansen<span style="display: inline-block; width: 19em; text-align: center"></span>
+            Andreas Hocevar</small>
+            <!--, terrestris GmbH &amp; Co. KG, ahocevar geospatial-->
+          </p>
+          <hr />
+          <p>
+            <small style="text-shadow: 0px 0px 2px #ffffff;">FOSSGIS 2022, Online-Event, 10.03.2022</small>
+          </p>
+        </section>
+
+        <section id="toc">
+          <h2>Gliederung</h2>
+          <ul>
+            <li>&Uuml;ber / Meta 🤏</li>
+            <li>Live Demo 🤩</li>
+            <li>Ausblick 👀</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>&Uuml;ber / Meta 🤏</h1>
+        </section>
+
+        <section id="author-marc-jansen">
+          <h2>Marc Jansen</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="./img/mj.jpg" class="plain" width="200"/><br />
+              <small>
+                <a class="email" href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br />
+                <a class="github" href="https://github.com/marcjansen/">@marcjansen</a><br />
+                <a class="twitter" href="https://twitter.com/selectoid/">@selectoid</a><br />
+              </small><br />
+              <img src="./img/openlayers_de_1ed.png" class="plain" width=100 />
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li>Gesch&auml;ftsf&uuml;hrer @terrestris &amp; @mundialis</li>
+                  <li>Kernentwickler &amp; PSC OpenLayers</li>
+                  <li>GeoExt, SHOGun, GeoStyler</li>
+                  <!-- <li>Buchautor "OpenLayers"</li> -->
+                  <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                  <li>OSGeo Foundation Charter Member</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="about-company-terrestris">
+          <h2>terrestris</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="./img/terrestris-logo-normal.svg" class="plain" width="400"/>
+              <br /><small>
+              <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
+              <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
+              <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
+            </small>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
+                  <li>OpenSource GIS aus Bonn</li>
+                  <li>Entwicklung, Projekte &amp; Support/Schulung</li>
+                  <li>Beratung, Planung, Implementierung &amp; Wartung</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="were-hiring">
+          <h3>Teil des Teams werden?</h3>
+          <h1 style="font-size: 2.2em; margin: 1em 0;">mundialis &amp; terrestris suchen Verstärkung</h1>
+          <h3>👉 Kontaktiert uns 🚀</h3>
+        </section>
+
+        <section id="author-andreas-hocevar">
+          <h2>Andreas Hocevar</h2>
+          <h3>ahocevar geospatial</h3>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="./img/ah.jpg" class="plain" width="200"/><br />
+              <small>
+                <a class="email" href="mailto:mail@ahocevar.com">mail@ahocevar.com</a><br />
+                <a class="github" href="https://github.com/ahocevar/">@ahocevar</a><br />
+                <a class="twitter" href="https://twitter.com/ahoce/">@ahoce</a><br />
+              </small>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li>OpenLayers Kernentwickler und im Steering Committee</lI>
+                  <li>Proj4js Maintainer und Entwickler</li>
+                  <li>ol-mapbox-style Maintainer und Entwickler</li>
+                  <li>Professioneller OpenLayers Support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section>
+          <h2>Was ist OpenLayers?</h2>
+          <blockquote lang="en">
+            A high-performance, <span class="highlight">feature-packed</span> library for all your mapping
+            needs.
+            <footer>&mdash; <cite><a href="https://openlayers.org/">openlayers.org, 28. Mai 2021</a></cite></footer>
+          </blockquote>
+          <ul>
+            <li>OpenSource (BSD)</li>
+            <li>JavaScript</li>
+            <li>OSGeo Projekt</li>
+          </ul>
+        </section>
+
+        <section data-background-video="./img/examples.mp4" data-background-size="contain">
+          <div style="background-color: #ffffff77; color: black; border-radius: 1em; margin-top:6em; text-shadow: 1px 1px #ffffff;">
+            <ul>
+              <li>Viele Daten- &amp; Layerquellen</li>
+              <li>Interaktionen &amp; Steuerelemente</li>
+              <li>Aktiv entwickelt &amp; große Community</li>
+              <li>Gut dokumentiert &amp; viele Beispiele</li>
+              <li>Universell einsetzbar</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h1>Live Demo 🤩</h1>
+        </section>
+
+        <section>
+          <h2>Immediate Rendering</h2>
+          <ul>
+            <li>Zugriff auf den Render Context des Layers</li>
+            <li>Zeichnen mit OpenLayers Geometrien und Styles</li>
+            <li>Koordinatensystem der View</li>
+          </ul>
+          <pre><code class="javascript">import toContext from 'ol/render';
+layer.on('postrender', event => {
+  const immediate = getVectorContext(event);
+  immediate.setImageStyle(myCircleStyle);
+  immediate.drawPoint(myPointGeometry);
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Immediate Rendering</h2>
+          <ul>
+            <li>Zugriff auf den Canvas Context des Layers</li>
+            <li>Zeichnen mit dem Canvas 2D API</li>
+            <li>Pixel-Koordinatensystem des Canvas</li>
+          </ul>
+          <pre><code class="javascript">layer.on('postrender', event => {
+  const context = event.context;
+  const canvas = context.canvas;
+  const center = [canvas.width / 2, canvas.height / 2];
+  context.beginPath();
+  context.moveTo(center[0] + 50, center[1] - 50);
+  context.lineTo(center[0] - 50, center[1] - 50);
+  context.lineTo(center[0] - 50, center[1] + 50);
+  context.lineTo(center[0] + 50, center[1] + 50);
+  context.closePath();
+  context.fillStyle = 'rgba(50,170,50,0.5)';
+  context.fill();
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Immediate Rendering</h2>
+          <iframe src="./inline-examples/bike-track.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Vector Tiles etc.</h2>
+          <ul>
+            <li>Ideal für thematische Karten</li>
+            <li>Mapbox Vector Tiles und Mapbox Style</li>
+          </ul>
+          <pre><code class="javascript">import MVT from 'ol/format/MVT';
+import createStyle from 'ol-mapbox-style/dist/stylefunction';
+
+const bodenkarte = new VectorTileLayer({
+  source: new VectorTileSource({
+    format: new MVT(),
+    url: myVectorTileServiceUrl
+  })
+});
+
+bodenkarte.setStyle(
+  createStyle(bodenkarte, myMapboxStyle, 'bodenkarte-tiles')
+);</code></pre>
+        </section>
+
+        <section>
+          <h2>Vector Tiles</h2>
+          <iframe src="./inline-examples/bodenkarte.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Mapbox Style</h2>
+          <ul>
+            <li>Nicht nur für Vector Tile Layer</li>
+            <li>Beschreibt eine komplette Karte (Center, Zoom, Layer, Styles)</li>
+            <li>In OpenLayers verfügbar mit <a href="https://npmjs.com/package/ol-mapbox-style">ol-mapbox-style</a></li>
+          </ul>
+          <pre><code class="javascript">import olms from 'ol-mapbox-style';
+
+olms('map', 'https://mymap.com/mystyle.json');</code></pre>
+        </section>
+
+        <section>
+          <h2>Vector Tiles</h2>
+          <iframe src="./inline-examples/basemap.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Raster Analyse</h2>
+          <ul>
+            <li>Raster Source mit einer <code>operation</code></li>
+          </ul>
+          <pre><code style="font-size: 17px;" class="javascript">function flood(pixels, data) {
+  const pixel = pixels[0];
+  if (pixel[3]) {
+    const height =
+      -10000 + (pixel[0] * 256 * 256 + pixel[1] * 256 + pixel[2]) * 0.1;
+    if (height &lt;= data.level) {
+      pixel[0] = 134; pixel[1] = 203; pixel[2] = 249; pixel[3] = 255;
+    } else {
+      pixel[3] = 0;
+    }
+  }
+  return pixel;
+}
+
+const raster = new RasterSource({
+  sources: [elevation],
+  operation: flood,
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Raster Analyse</h2>
+          <iframe src="./inline-examples/sea-level.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Reprojektion</h2>
+          <ul>
+            <li>Raster- und Vektorquellen</li>
+          </ul>
+          <iframe src="./inline-examples/reprojection.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Vektordaten</h2>
+          <ul>
+            <li>KML Beispiel</li>
+          </ul>
+          <iframe src="./inline-examples/kml.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Vektordaten</h2>
+          <ul>
+            <li>Vergleich mit <a href="https://www.gpsvisualizer.com/">GPS Visualizer</a> Darstellung</li>
+          </ul>
+          <img src="./img/kml-on-gmaps.png" class="plain stretch" />
+        </section>
+
+        <section>
+          <h2>Feature Editierung</h2>
+          <ul>
+            <li>~60 Zeilen Code</li>
+          </ul>
+          <iframe src="./inline-examples/editor.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>…in Entwicklung</h2>
+          <ul>
+            <li>aktueller <a href="https://github.com/openlayers/openlayers/pull/12304">PR #12304</a></li>
+          </ul>
+          <iframe src="https://deploy-preview-12304--ol-site.netlify.app/examples/modify-scale-and-rotate.html" class="plain stretch"></iframe>
+        </section>
+        
+        <section>
+          <h2>3rd party</h2>
+          <iframe src="http://viglino.github.io/ol-ext/examples/storymap/map.historical.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>3rd party</h2>
+          <iframe src="http://viglino.github.io/ol-ext/examples/canvas/map.control.printdialog.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Integrationen</h2>
+          <ul>
+            <li><a href="https://openlayers.org/3rd-party/">openlayers.org/3rd-party/</a></li>
+            <li>daneben zahlreiche andere <ul>
+              <li><a href="https://geoext.github.io/geoext/">GeoExt</a></li>
+              <li><a href="https://github.com/terrestris/react-geo">react-geo</a></li>
+              <li><a href="https://github.com/meggsimum/wegue">Wegue</a></li>
+              <li><a href="https://github.com/omniscale/anol">AnOL</a>, oder <a href="https://dev.to/camptocamp-geo/openlayers-in-an-angular-application-mn1">c2c</a></li>
+              <li><a href="https://www.masterportal.org/home.html">masterportal</a></li>
+              <li>usw. usf.</li>
+            </ul></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Ausblick 👀</h1>
+        </section>
+
+        <section>
+          <h2>NDVI mit COG</h2>
+          <iframe src="https://deploy-preview-12008--ol-site.netlify.app/examples/cog-math.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Zukünftige Features</h2>
+          <!--
+
+            COG
+            NDVU
+            Overviews usw. usf.
+
+            https://deploy-preview-12008--ol-site.netlify.app/examples/cog.html
+            https://deploy-preview-12008--ol-site.netlify.app/examples/cog-math.html
+            https://deploy-preview-12008--ol-site.netlify.app/examples/cog-overviews.html
+
+
+            OGC API https://github.com/openlayers/openlayers/pull/10963
+
+
+          -->
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="./img/26079227405_e8d56ff31c_o.jpg" class="plain" width="400"/>
+              <!--  -->
+              <a href="https://pxhere.com/en/photo/521876" class="img-attribution">Bild: &copy; Matthias Ripp</a>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li>geotiff.js Integration</li>
+                  <li><a href="https://github.com/openlayers/openlayers/pull/12008">mehr WebGL</a></li>
+                  <li>&rArr; COG Support, s.o.</li>
+                  <li><a href="https://github.com/openlayers/openlayers/pull/10963">OGC API</a></li>
+                  <li><a href="https://github.com/openlayers/openlayers/pull/12223">(noch) besseres Typing &amp; API-docs</a></li>
+                  <li>Bessere Node.js Integration</li>
+                  <li>+ Eure Beiträge 👼</li>
+                  <li>…</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="thanks-questions">
+          <h4>Vielen Dank</h4>
+          <hr />
+          <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+          <hr />
+          <p class="subtle">
+            <a href="#/imprint">Impressum</a>
+          </p>
+        </section>
+
+        <section id="imprint">
+          <h2>Impressum</h2>
+          <h4>Autoren</h4>
+
+          <div style="width: 47%; float: left;">
+            <address style="text-align: left">
+              <strong>Marc Jansen</strong><br />
+              <span style="font-size: 0.8em;">
+                terrestris GmbH &amp; Co. KG<br />
+                K&ouml;lnstra&szlig;e 99 <br />
+                53111 Bonn, Germany<br />
+                <a href="mailto:jansen@terrestris.de">jansen@terrestris.de</a>
+              </span>
+            </address>
+          </div>
+          <div style="width: 47%; float: right;">
+            <address style="text-align: right">
+              <strong>Andreas Hocevar</strong><br />
+              <span style="font-size: 0.8em;">
+              ahocevar geospatial<br />
+              Grüne Gasse 21d/25,<br />
+              8020 Graz, Austria<br />
+              <a href="mailto:mail@ahocevar.com">mail@ahocevar.com</a>
+              </span>
+            </address>
+          </div>
+
+          <h4 style="clear:both;">Lizenz</h4>
+          <p id="license">
+            Diese Folien sind unter <a
+            href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>
+            ver&ouml;ffentlicht.
+          </p>
+          <p>
+            <a href="https://ahocevar.net/fossgis2022-openlayers/index.html">Vortragsfolien</a>,
+            <a href="https://ahocevar.net/fossgis2022-openlayers/openlayers.pdf">PDF-Version</a>,
+            <a href="https://github.com/ahocevar/fossgis2022-openlayers">git repository</a>
+          </p>
+        </section>
+
+      </div>
+      <!-- END OF SLIDES -->
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

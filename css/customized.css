@@ -1,0 +1,274 @@
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Merriweather", Impact, sans-serif;
+  text-transform: none;
+}
+
+
+table.authors-contact td {
+  text-align: center;
+}
+table.authors-contact tr.smaller td {
+  font-size: 75%;
+}
+table.authors-contact td img {
+  margin: 0;
+  width: 3em;
+  height: 3em;
+  max-width: none;
+  max-height: none;
+}
+
+span.ok,
+span.nope {
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  text-shadow: 0 0 7px #ccc;
+}
+span.ok {
+  color: darkgreen;
+}
+span.nope {
+  font-weight: bold;
+  color: darkred;
+}
+
+.reveal section .force-natural-case {
+  text-transform: none;
+}
+
+.reveal section img.plain {
+  background: none;
+  border-width: 0;
+  box-shadow: none;
+}
+.reveal section h1 img.plain,
+.reveal section h2 img.plain,
+.reveal section h3 img.plain,
+.reveal section h4 img.plain,
+.reveal section h5 img.plain,
+.reveal section h6 img.plain {
+  margin: 0;
+}
+
+.reveal section img.shadow {
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media all {
+  .print-only {
+    display: none;
+  }
+  .no-print {
+    display: inherit;
+  }
+}
+
+@media print {
+  .print-only {
+    display: inherit !important;
+  }
+  .no-print {
+    display: none;
+  }
+}
+
+.reveal section img.contrast {
+  background-color: #fff;
+  border: 10px solid #fff;
+  box-shadow: 0 0 10px 10px #fff;
+  border-radius: 5px;
+}
+
+.reveal section img.contrast-black {
+  background-color: #000;
+  border: 10px solid #000;
+  box-shadow: 0 0 10px 10px #000;
+  border-radius: 5px;
+}
+
+.reveal section p.subtle {
+  margin-top: 5em;
+}
+
+.reveal section p.subtle a {
+  font-size: smaller;
+}
+
+.reveal section div.split-info {
+  margin: 5px;
+  clear: both;
+}
+
+.reveal section div.part {
+  margin: 5px;
+  float: left;
+  width: 48.9%;
+}
+
+.reveal section div.part .enumeration {
+  text-align: left;
+}
+
+.reveal section a.twitter,
+.reveal section a.github,
+.reveal section a.email,
+.reveal section a.npm,
+.reveal section a.url {
+  display: inline;
+  padding-left: 1.2em;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 1.0em;
+}
+
+.reveal section a.github {
+  background-image: url("../img/github-logo.png");
+}
+
+.reveal section a.twitter {
+  background-image: url("../img/twitter-logo.png");
+}
+
+.reveal section a.email {
+  background-image: url("../img/mail-logo.png");
+}
+
+.reveal section a.npm {
+  background-image: url("../img/npm-logo.svg");
+    background-position: left 0.55em;
+}
+
+.reveal section a.url {
+  background-image: url("../img/url-logo.png");
+}
+
+.reveal section .highlight {
+  text-shadow: 0 0 20px red;
+}
+
+.reveal section .highlight-logo-color {
+  text-shadow: 0 0 20px #35BBCE;
+}
+
+.reveal section .highlight-alt {
+  text-shadow: 0 0 20px darkblue;
+}
+
+.reveal section .unhighlight {
+  opacity: 0.7;
+}
+
+.reveal section .force-lowercase {
+  text-transform:lowercase;
+}
+
+.reveal code.small {
+  font-size: 0.8em;
+  line-height: 1.2em;
+}
+
+.reveal section #books div {
+  float: left;
+  width: 33%
+}
+
+.reveal section img.sideimage {
+  float: right;
+  clear: right;
+  width: 25%
+}
+
+.reveal section blockquote footer {
+  font-size: 0.7em;
+  text-align: right;
+}
+.reveal section blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -5px;
+  top: -25px;
+  color: #7a7a7a;
+}
+
+.reveal section blockquote {
+  box-shadow: none;
+  padding: 0.5em 1em;
+}
+
+.reveal {
+    font-family: "Merriweather" serif;
+}
+
+.reveal section li code,
+.reveal section p code {
+    font-family: "Inconsolata", monospace;
+    font-weight: bold;
+    color: #333;
+    margin: inherit 0.2em;
+}
+
+.reveal section pre code {
+    font-weight: normal;
+    line-height: 1.2;
+    white-space: pre-wrap;
+}
+
+#teampic {
+  height: 450px;
+  margin: auto;
+  background-image: url(../img/team.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all 1.5s ease-in-out 0s;
+}
+
+#teampic:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.reveal ul ul.inline {
+  display: inline;
+  list-style: none;
+  margin-left: 0;
+}
+
+.reveal ul ul.inline li {
+  display: inline;
+}
+
+.reveal ul ul.inline li:after {
+  content: ", ";
+}
+.reveal ul ul.inline li:last-child:after {
+    content: "";
+}
+#components li code {
+  float: right;
+  padding-left: 2em;
+}
+#utilities li code {
+  float: right;
+  padding-left: 2em;
+}
+.reveal section a.pr-detail {
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+}
+a.img-attribution {
+  font-size: small
+}
