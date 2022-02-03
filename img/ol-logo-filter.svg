@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="154.152"
+   height="155.487"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="ol-logo-filter.svg">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Greyscale"
+       id="filter4148">
+      <feColorMatrix
+         values="0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0.21 0.72 0.072 0 0 0 0 0 1 0 "
+         id="feColorMatrix4150" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1030"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="1.5178118"
+     inkscape:cx="-83.352327"
+     inkscape:cy="77.7435"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g4"
+     style="filter:url(#filter4148);opacity:0.75">
+    <title
+       id="title6">OpenLayers 3 Logo</title>
+    <path
+       fill="#015965"
+       d="m56.62,34.146c11.25,-9.369 29.662,-9.371 40.914,0l48.18201,40.123c11.248,9.37 11.25,24.69701 -0.002,34.068l-48.18001,40.122c-11.254,9.37199 -29.666,9.369 -40.914,0l-48.182,-40.122c-11.25,-9.369 -11.25,-24.698 -0.002,-34.068l48.184,-40.123z"
+       id="path8"
+       style="" />
+    <path
+       fill="#E5E5E5"
+       d="m56.62,21.067c11.25,-9.369 29.662,-9.371 40.914,0l48.18201,40.123c11.248,9.371 11.25,24.699 -0.002,34.069l-48.18001,40.12199c-11.254,9.37201 -29.666,9.36899 -40.914,0l-48.182,-40.12199c-11.25,-9.37 -11.25,-24.69801 -0.002,-34.069l48.184,-40.123z"
+       id="path10"
+       style="" />
+    <path
+       fill="#35BBCE"
+       d="m56.62,7.027c11.25,-9.369 29.662,-9.371 40.914,0l48.18201,40.123c11.248,9.371 11.25,24.699 -0.002,34.069l-48.18001,40.122c-11.254,9.37199 -29.666,9.369 -40.914,0l-48.182,-40.122c-11.25,-9.37 -11.25,-24.698 -0.002,-34.069l48.184,-40.123z"
+       id="path12"
+       style="" />
+    <path
+       opacity="0.15"
+       fill="#FFFFFF"
+       d="m147.10001,48.398c-0.44299,-0.426 -0.899,-0.845 -1.38498,-1.249l-48.18103,-40.122c-11.252,-9.371 -29.66399,-9.369 -40.914,0l-48.184,40.122c-11.248,9.372 -11.248,24.7 0.002,34.07l5.185,4.317c13.557,-16.26801 59.276,-61.35 133.47701,-37.138z"
+       id="path14"
+       style="" />
+  </g>
+</svg>
