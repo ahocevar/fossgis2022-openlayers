@@ -1,5 +1,3 @@
-import { preview } from "vite"
-
 # FOSSGIS 2022 OpenLayers Slides
 
 ## Developing
