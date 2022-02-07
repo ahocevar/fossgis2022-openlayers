@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modify huge polygons</title>
+  <style>
+    html, body, .map {
+      font-family: sans-serif;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+    }
+    .info {
+      text-align: center;
+      padding: 5px;
+      min-width: 180px;
+      z-index: 1;
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      background: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div id="map" class="map">
+    <div class="info"><span id="count"></span></div>
+  </div>
+  <script type="module" src="./src/modify.js"></script>
+</body>
+</html>
