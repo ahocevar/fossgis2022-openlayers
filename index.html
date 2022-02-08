@@ -203,8 +203,17 @@
           <h2>Simplify & Modify</h2>
           <p>Beispiele für Performance-Optimierungen</p>
           <ul>
-            <li>Vektordaten-Reduktion beim Rendern</li>
-            <li>Modify Interaction arbeitet mit RTree von Vertices</li>
+            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
+            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Und was habe ich davon?</p>
+          <ul>
+            <li>Gute Render-Performance auch ohne WebGL</li>
+            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
           </ul>
         </section>
 
@@ -214,41 +223,31 @@
         </section>
 
         <section>
-          <h2>Vector Tiles etc.</h2>
-          <ul>
-            <li>Ideal für thematische Karten</li>
-            <li>Mapbox Vector Tiles und Mapbox Style</li>
-          </ul>
-          <pre><code class="javascript">import MVT from 'ol/format/MVT';
-import createStyle from 'ol-mapbox-style/dist/stylefunction';
-
-const bodenkarte = new VectorTileLayer({
-  source: new VectorTileSource({
-    format: new MVT(),
-    url: myVectorTileServiceUrl
-  })
-});
-
-bodenkarte.setStyle(
-  createStyle(bodenkarte, myMapboxStyle, 'bodenkarte-tiles')
-);</code></pre>
+          <h2>Multi-Source Layer</h2>
+          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
         </section>
 
         <section>
-          <h2>Vector Tiles</h2>
-          <iframe src="./bodenkarte.html" class="plain stretch"></iframe>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="https://lifegate.idiv.de/index.html.de" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Mapbox Style</h2>
-          <ul>
-            <li>Nicht nur für Vector Tile Layer</li>
-            <li>Beschreibt eine komplette Karte (Center, Zoom, Layer, Styles)</li>
-            <li>In OpenLayers verfügbar mit <a href="https://npmjs.com/package/ol-mapbox-style">ol-mapbox-style</a></li>
-          </ul>
-          <pre><code class="javascript">import olms from 'ol-mapbox-style';
+          <h2>Multi-Source Layer</h2>
+          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
+          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
+  sources: sourcesFromTileGrid(
+    tileGrid,
+    ([z, x, y]) => new GeoTIFFSource({
+      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
+    })
+  ),
+});</code></pre>
+        </section>
 
-olms('map', 'https://mymap.com/mystyle.json');</code></pre>
+        <section>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
         </section>
 
         <section>
