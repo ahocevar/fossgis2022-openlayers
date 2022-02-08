@@ -200,40 +200,12 @@
         </section>
 
         <section>
-          <h2>Immediate Rendering</h2>
+          <h2>Simplify & Modify</h2>
+          <p>Beispiele für Performance-Optimierungen</p>
           <ul>
-            <li>Zugriff auf den Render Context des Layers</li>
-            <li>Zeichnen mit OpenLayers Geometrien und Styles</li>
-            <li>Koordinatensystem der View</li>
+            <li>Vektordaten-Reduktion beim Rendern</li>
+            <li>Modify Interaction arbeitet mit RTree von Vertices</li>
           </ul>
-          <pre><code class="javascript">import toContext from 'ol/render';
-layer.on('postrender', event => {
-  const immediate = getVectorContext(event);
-  immediate.setImageStyle(myCircleStyle);
-  immediate.drawPoint(myPointGeometry);
-});</code></pre>
-        </section>
-
-        <section>
-          <h2>Immediate Rendering</h2>
-          <ul>
-            <li>Zugriff auf den Canvas Context des Layers</li>
-            <li>Zeichnen mit dem Canvas 2D API</li>
-            <li>Pixel-Koordinatensystem des Canvas</li>
-          </ul>
-          <pre><code class="javascript">layer.on('postrender', event => {
-  const context = event.context;
-  const canvas = context.canvas;
-  const center = [canvas.width / 2, canvas.height / 2];
-  context.beginPath();
-  context.moveTo(center[0] + 50, center[1] - 50);
-  context.lineTo(center[0] - 50, center[1] - 50);
-  context.lineTo(center[0] - 50, center[1] + 50);
-  context.lineTo(center[0] + 50, center[1] + 50);
-  context.closePath();
-  context.fillStyle = 'rgba(50,170,50,0.5)';
-  context.fill();
-});</code></pre>
         </section>
 
         <section>
