@@ -59,8 +59,8 @@ const gridinfo = new WebGLTileLayer({
           } else {
             context.clearRect(0, 0, width, height);
           }
-          context.fillText(`${z}/${y}/${x}.tif`, width / 2, height / 2);
-          context.strokeText(`${z}/${y}/${x}.tif`, width / 2, height / 2);
+          context.fillText(`${z}/${y}/${x}.tif`, width / 2, height / 2 + 30);
+          context.strokeText(`${z}/${y}/${x}.tif`, width / 2, height / 2 + 30);
           context.strokeRect(0, 0, width, height);
           const data = context.getImageData(0, 0, width, height).data;
           // converting to Uint8Array for increased browser compatibility
@@ -78,6 +78,7 @@ const map = new Map({
   view: new View({
     projection: 'EPSG:4326',
     center: [0, 0],
-    zoom: 0
+    zoom: 1,
+    multiWorld: true
   }),
 });

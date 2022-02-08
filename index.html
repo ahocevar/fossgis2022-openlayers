@@ -251,38 +251,52 @@
         </section>
 
         <section>
-          <h2>Vector Tiles</h2>
-          <iframe src="./basemap.html" class="plain stretch"></iframe>
+          <h2>WebGL Data Tiles</h2>
+          <p>Band Math</p>
+          <pre><code class="javascript">// elevation = -10000 + ((R * 256 * 256 + G * 256 + B) * 0.1)
+
+const elevation = [
+  '+',
+  -10000,
+  ['*',
+    ['+',
+      ['*', 256 * 256, ['band', 1]],
+      ['+', ['*', 256, ['band', 2]],
+      ['band', 3]]
+    ],
+    0.1 * 255,
+  ],
+];</code></pre>
+        </section>
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <p>Style Variablen</p>
+          <pre><code class="javascript">const style = {
+  variables: {
+    stauziel: 368,
+  },
+  color: [
+    'case',
+    ['&lt;=', elevation, ['var', 'stauziel']],
+    [139, 212, 255, 1],
+    [139, 212, 255, 0],
+  ],
+}</code></pre>
         </section>
 
         <section>
-          <h2>Raster Analyse</h2>
-          <ul>
-            <li>Raster Source mit einer <code>operation</code></li>
-          </ul>
-          <pre><code style="font-size: 17px;" class="javascript">function flood(pixels, data) {
-  const pixel = pixels[0];
-  if (pixel[3]) {
-    const height =
-      -10000 + (pixel[0] * 256 * 256 + pixel[1] * 256 + pixel[2]) * 0.1;
-    if (height &lt;= data.level) {
-      pixel[0] = 134; pixel[1] = 203; pixel[2] = 249; pixel[3] = 255;
-    } else {
-      pixel[3] = 0;
-    }
-  }
-  return pixel;
-}
-
-const raster = new RasterSource({
-  sources: [elevation],
-  operation: flood,
+          <h2>WebGL Data Tiles</h2>
+          <p>Aktualisierung nach User-Interaktion</p>
+          <pre><code class="javascript">slider.addEventListener('input', () => {
+  layer.updateStyleVariables({
+    stauziel: parseFloat(slider.value)
+  });
 });</code></pre>
         </section>
 
         <section>
-          <h2>Raster Analyse</h2>
-          <iframe src="./sea-level.html" class="plain stretch"></iframe>
+          <h2>WebGL Data Tiles</h2>
+          <iframe src="./elevation.html" class="plain stretch"></iframe>
         </section>
 
         <section>
