@@ -35,9 +35,10 @@ map.addOverlay(marker);
 const popup = new Popup({ offset: [0, -20] });
 map.addOverlay(popup);
 
-const showPopup = () => popup.show(
-  marker.getPosition(), 'A pretty CSS3 popup.<br> Easily customizable.');
-
+function showPopup() {
+  popup.show(marker.getPosition(),
+    'A pretty CSS3 popup.<br> Easily customizable.');
+}
 showPopup();
-icon.addEventListener('click', showPopup);
+marker.getElement().addEventListener('click', showPopup);
 

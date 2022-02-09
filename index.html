@@ -384,14 +384,18 @@ map.addOverlay(marker);</code></pre>
 
         <section>
           <h2>Leaflet ist einfacher</h2>
-          <pre><code class="javascript">const popup = new Popup({ offset: [0, -20] });
+          <pre><code class="javascript">marker
+  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+  .openPopup();</code></pre>
+  <pre><code class="javascript">const popup = new Popup({ offset: [0, -20] });
 map.addOverlay(popup);
 
-const showPopup = () => popup.show(
-  marker.getPosition(), 'A pretty CSS3 popup.<br> Easily customizable.');
-
+function showPopup() {
+  popup.show(marker.getPosition(),
+    'A pretty CSS3 popup.<br> Easily customizable.');
+}
 showPopup();
-icon.addEventListener('click', showPopup);</code></pre>
+marker.getElement().addEventListener('click', showPopup);</code></pre>
           <p>Popup: Matt Walkers 3d Party Library <a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
         </section>
 
