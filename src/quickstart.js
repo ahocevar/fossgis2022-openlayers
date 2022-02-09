@@ -21,26 +21,23 @@ const map = new Map({
 
 map.addLayer(new TileLayer({ source: new OSM() }));
 
-const marker = new Feature(new Point(lonlat));
-
-map.addLayer(new VectorLayer({
-  source: new VectorSource({ features: [marker] }),
-  style: new Style({
-    image: new Icon({ src: './marker.png', anchor: [0.5, 1] })
-  })
-}));
+const icon = document.createElement('img');
+icon.src = './marker.png';
+icon.style.cursor = 'pointer';
+const marker = new Overlay({
+  position: lonlat,
+  positioning: 'bottom-center',
+  element: icon,
+  stopEvent: false,
+});
+map.addOverlay(marker);
 
 const popup = new Popup({ offset: [0, -20] });
 map.addOverlay(popup);
-marker.set('i', 'A pretty CSS3 popup.<br> Easily customizable.');
 
-const showPopup = (feature) => feature && popup.show(
-  feature.getGeometry().getCoordinates(), feature.get('i'));
+const showPopup = () => popup.show(
+  marker.getPosition(), 'A pretty CSS3 popup.<br> Easily customizable.');
 
-showPopup(marker);
-map.on('click', (e) =>
-  showPopup(map.getFeaturesAtPixel(e.pixel)[0]));
-map.on('pointermove', (e) => {
-  const cursor = map.hasFeatureAtPixel(e.pixel) ? 'pointer' : '';
-  map.getTargetElement().style.cursor = cursor;
-});
+showPopup();
+icon.addEventListener('click', showPopup);
+

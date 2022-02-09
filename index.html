@@ -229,7 +229,7 @@
 
         <section>
           <h2>Multi-Source Layer</h2>
-          <iframe src="https://lifegate.idiv.de/index.html.de" class="plain stretch"></iframe>
+          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
         </section>
 
         <section>
@@ -248,6 +248,11 @@
         <section>
           <h2>Multi-Source Layer</h2>
           <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <iframe src="./elevation.html" class="plain stretch"></iframe>
         </section>
 
         <section>
@@ -295,11 +300,6 @@ const elevation = [
         </section>
 
         <section>
-          <h2>WebGL Data Tiles</h2>
-          <iframe src="./elevation.html" class="plain stretch"></iframe>
-        </section>
-
-        <section>
           <h2>Vector Tiles</h2>
           <p><b>Mapbox Vector Tiles + Mapbox Style</b><br>
           (Mapbox, Maptiler, Geoapify, Carto, Esri, ...)</p>
@@ -342,6 +342,10 @@ setUserProjection('EPSG:31259');</code></pre>
           <iframe src="./basemap.html" class="plain stretch"></iframe>
         </section>
 
+        <section>
+          <h2>Leaflet ist einfacher</h2>
+          <iframe src="./quickstart.html" class="plain stretch"></iframe>
+        </section>
 
         <section>
           <h2>Leaflet ist einfacher</h2>
@@ -366,41 +370,29 @@ const map = new Map({
           <h2>Leaflet ist einfacher</h2>
           <pre><code class="javascript">const marker = L.marker([51.5, -0.09]);
 marker.addTo(map);</code></pre>
-          <pre><code class="javascript">const marker = new Feature(new Point([-0.09, 51.5]));
-
-map.addLayer(new VectorLayer({
-  source: new VectorSource({ features: [marker] }),
-  style: new Style({
-    image: new Icon({ src: './marker.png', anchor: [0.5, 1] })
-  })
-}));</code></pre>
+          <pre><code class="javascript">const icon = document.createElement('img');
+icon.src = './marker.png';
+icon.style.cursor = 'pointer';
+const marker = new Overlay({
+  position: [-0.09, 51.5],
+  positioning: 'bottom-center',
+  element: icon,
+  stopEvent: false,
+});
+map.addOverlay(marker);</code></pre>
         </section>
 
         <section>
           <h2>Leaflet ist einfacher</h2>
-          <pre><code class="javascript">marker
-  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-  .openPopup();</code></pre>
           <pre><code class="javascript">const popup = new Popup({ offset: [0, -20] });
 map.addOverlay(popup);
-marker.set('i', 'A pretty CSS3 popup.<br> Easily customizable.');
 
-const showPopup = (feature) => feature && popup.show(
-  feature.getGeometry().getCoordinates(), feature.get('i'));
-showPopup(marker);
+const showPopup = () => popup.show(
+  marker.getPosition(), 'A pretty CSS3 popup.<br> Easily customizable.');
 
-map.on('click', (e) =>
-  showPopup(map.getFeaturesAtPixel(e.pixel)[0]));
-map.on('pointermove', (e) => {
-  const cursor = map.hasFeatureAtPixel(e.pixel) ? 'pointer' : '';
-  map.getTargetElement().style.cursor = cursor;
-});</code></pre>
+showPopup();
+icon.addEventListener('click', showPopup);</code></pre>
           <p>Popup: Matt Walkers 3d Party Library <a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
-        </section>
-
-        <section>
-          <h2>Leaflet ist einfacher</h2>
-          <iframe src="./quickstart.html" class="plain stretch"></iframe>
         </section>
 
         <section>
