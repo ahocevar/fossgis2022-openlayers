@@ -81,6 +81,15 @@ const map = new Map({
 });
 apply(map);
 map.addControl(new ScaleLine());
+map.on('pointermove', (event) => {
+  const pixelData = layer.getData(event.pixel);
+  let elevation = '';
+  if (pixelData) {
+    const [r, g, b] = Array.from(pixelData);
+    elevation = (-10000 + ((r * 256 * 256 + g * 256 + b) * 0.1)).toFixed(0) + ' m';
+  }
+  map.getViewport().title = elevation;
+});
 
 const control = document.getElementById('level');
 const output = document.getElementById('output');
