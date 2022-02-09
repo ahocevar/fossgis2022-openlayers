@@ -344,52 +344,63 @@ setUserProjection('EPSG:31259');</code></pre>
 
 
         <section>
-          <h2>Vektordaten</h2>
-          <ul>
-            <li>Vergleich mit <a href="https://www.gpsvisualizer.com/">GPS Visualizer</a> Darstellung</li>
-          </ul>
-          <img src="./img/kml-on-gmaps.png" class="plain stretch" />
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">const map = L.map('map').setView([51.505, -0.09], 13);</code></pre>
+          <pre><code class="javascript">useGeographic();
+
+const map = new Map({
+  target: 'map',
+  view: new View({ center: [-0.09, 51.505], zoom: 13 })
+});</code></pre>
         </section>
 
         <section>
-          <h2>Feature Editierung</h2>
-          <ul>
-            <li>~60 Zeilen Code</li>
-          </ul>
-          <iframe src="./editor.html" class="plain stretch"></iframe>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);</code></pre>
+          <pre><code class="javascript">map.addLayer(new TileLayer({ source: new OSM() }));</code></pre>
         </section>
 
         <section>
-          <h2>…in Entwicklung</h2>
-          <ul>
-            <li>aktueller <a href="https://github.com/openlayers/openlayers/pull/12304">PR #12304</a></li>
-          </ul>
-          <iframe src="https://deploy-preview-12304--ol-site.netlify.app/examples/modify-scale-and-rotate.html" class="plain stretch"></iframe>
-        </section>
-        
-        <section>
-          <h2>3rd party</h2>
-          <iframe src="http://viglino.github.io/ol-ext/examples/storymap/map.historical.html" class="plain stretch"></iframe>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">const marker = L.marker([51.5, -0.09]);
+marker.addTo(map);</code></pre>
+          <pre><code class="javascript">const marker = new Feature(new Point([-0.09, 51.5]));
+
+map.addLayer(new VectorLayer({
+  source: new VectorSource({ features: [marker] }),
+  style: new Style({
+    image: new Icon({ src: './marker.png', anchor: [0.5, 1] })
+  })
+}));</code></pre>
         </section>
 
         <section>
-          <h2>3rd party</h2>
-          <iframe src="http://viglino.github.io/ol-ext/examples/canvas/map.control.printdialog.html" class="plain stretch"></iframe>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">marker
+  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+  .openPopup();</code></pre>
+          <pre><code class="javascript">const popup = new Popup({ offset: [0, -20] });
+map.addOverlay(popup);
+marker.set('i', 'A pretty CSS3 popup.<br> Easily customizable.');
+
+const showPopup = (feature) => feature && popup.show(
+  feature.getGeometry().getCoordinates(), feature.get('i'));
+showPopup(marker);
+
+map.on('click', (e) =>
+  showPopup(map.getFeaturesAtPixel(e.pixel)[0]));
+map.on('pointermove', (e) => {
+  const cursor = map.hasFeatureAtPixel(e.pixel) ? 'pointer' : '';
+  map.getTargetElement().style.cursor = cursor;
+});</code></pre>
+          <p>Popup: Matt Walkers 3d Party Library <a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
         </section>
 
         <section>
-          <h2>Integrationen</h2>
-          <ul>
-            <li><a href="https://openlayers.org/3rd-party/">openlayers.org/3rd-party/</a></li>
-            <li>daneben zahlreiche andere <ul>
-              <li><a href="https://geoext.github.io/geoext/">GeoExt</a></li>
-              <li><a href="https://github.com/terrestris/react-geo">react-geo</a></li>
-              <li><a href="https://github.com/meggsimum/wegue">Wegue</a></li>
-              <li><a href="https://github.com/omniscale/anol">AnOL</a>, oder <a href="https://dev.to/camptocamp-geo/openlayers-in-an-angular-application-mn1">c2c</a></li>
-              <li><a href="https://www.masterportal.org/home.html">masterportal</a></li>
-              <li>usw. usf.</li>
-            </ul></li>
-          </ul>
+          <h2>Leaflet ist einfacher</h2>
+          <iframe src="./quickstart.html" class="plain stretch"></iframe>
         </section>
 
         <section>
