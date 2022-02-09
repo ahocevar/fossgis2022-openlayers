@@ -31,7 +31,7 @@ const elevation = [
 
 const style = {
   variables: {
-    elevation: 360,
+    elevation: 368,
   },
   color: [
     'case',
@@ -44,7 +44,7 @@ const style = {
 
 const layer = new TileLayer({
   opacity: 0.6,
-  extent: [...fromLonLat([14, 46.5]), ...fromLonLat([14.8185, 46.69])],
+  extent: [...fromLonLat([14, 46.5]), ...fromLonLat([14.83, 46.69])],
   source: new XYZ({
     url:
       'https://api.maptiler.com/tiles/terrain-rgb/{z}/{x}/{y}.png?key=' + key,
