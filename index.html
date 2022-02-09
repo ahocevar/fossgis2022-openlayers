@@ -300,11 +300,19 @@ const elevation = [
         </section>
 
         <section>
-          <h2>Reprojektion</h2>
-          <ul>
-            <li>Raster- und Vektorquellen</li>
-          </ul>
-          <iframe src="./reprojection.html" class="plain stretch"></iframe>
+          <h2>Vector Tiles</h2>
+          <p><b>Mapbox Vector Tiles + Mapbox Style</b><br>
+          (Mapbox, Maptiler, Geoapify, Carto, Esri, ...)</p>
+          <pre><code class="javascript">import MapboxVectorLayer from 'ol/layer/MapboxVector.js';
+
+const layer = new MapboxVectorLayer({
+  styleUrl: 'https://api.maptiler.com/maps/osm-standard/style.json?key=' + key
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Vector Tiles</h2>
+          <iframe src="./vector-tiles.html" class="plain stretch"></iframe>
         </section>
 
         <section>
