@@ -2,27 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Basemap Vector Tiles</title>
+  <title>Local projection</title>
   <style>
-  @font-face {
-  font-family: "Corbel";
-  src: url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot");
-  src: url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.svg#Corbel")
-      format("svg");
-  }
   html, body, .map {
     font-family: sans-serif;
     margin: 0 auto;
     width: 100%;
     height: 100%;
+  }
+  .ol-mouse-position {
+    text-shadow: -1px 0 white, 0 1px white,
+      1px 0 white, 0 -1px white;
   }
   </style>
 </head>
