@@ -29,6 +29,19 @@ const elevation = [
   ],
 ];
 
+const style = {
+  variables: {
+    elevation: 360,
+  },
+  color: [
+    'case',
+    // use the `elevation` style variable to determine the color
+    ['<=', elevation, ['var', 'elevation']],
+    [139, 212, 255, 1],
+    [139, 212, 255, 0],
+  ],
+};
+
 const layer = new TileLayer({
   opacity: 0.6,
   extent: [...fromLonLat([14, 46.5]), ...fromLonLat([14.8185, 46.69])],
@@ -38,18 +51,13 @@ const layer = new TileLayer({
     tileSize: 512,
     maxZoom: 12,
   }),
-  style: {
-    variables: {
-      elevation: 360,
-    },
-    color: [
-      'case',
-      // use the `elevation` style variable to determine the color
-      ['<=', elevation, ['var', 'elevation']],
-      [139, 212, 255, 1],
-      [139, 212, 255, 0],
-    ],
-  },
+  style: style,
+});
+
+const rawLayer = new TileLayer({
+  opacity: 0.6,
+  source: layer.getSource(),
+  visible: false
 });
 
 const map = new Map({
@@ -64,6 +72,7 @@ const map = new Map({
       }),
     }),
     layer,
+    rawLayer
   ],
   view: new View({
     center: fromLonLat([14.7545, 46.6376]),
@@ -75,10 +84,18 @@ map.addControl(new ScaleLine());
 
 const control = document.getElementById('level');
 const output = document.getElementById('output');
+const raw = document.getElementById('raw');
 const listener = function () {
   output.innerText = control.value;
   layer.updateStyleVariables({elevation: parseFloat(control.value)});
 };
 control.addEventListener('input', listener);
 control.addEventListener('change', listener);
+raw.addEventListener('input', () => {
+  if (raw.checked) {
+    rawLayer.setVisible(true);
+  } else {
+    rawLayer.setVisible(false);
+  }
+});
 output.innerText = control.value;
