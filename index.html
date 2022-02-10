@@ -370,16 +370,9 @@ const map = new Map({
           <h2>Leaflet ist einfacher</h2>
           <pre><code class="javascript">const marker = L.marker([51.5, -0.09]);
 marker.addTo(map);</code></pre>
-          <pre><code class="javascript">const icon = document.createElement('img');
-icon.src = './marker.png';
-icon.style.cursor = 'pointer';
-const marker = new Overlay({
-  position: [-0.09, 51.5],
-  positioning: 'bottom-center',
-  element: icon,
-  stopEvent: false,
-});
-map.addOverlay(marker);</code></pre>
+          <pre><code class="javascript">const marker = new Marker({ position: [-0.09, 51.5] });
+marker.setMap(map);</code></pre>
+          <p>Marker: Andreas Hocevars 3d Party Library<br><a href="https://www.npmjs.com/package/ol-marker-feature">ol-marker-feature</a></p>
         </section>
 
         <section>
@@ -387,16 +380,13 @@ map.addOverlay(marker);</code></pre>
           <pre><code class="javascript">marker
   .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
   .openPopup();</code></pre>
-          <pre><code class="javascript">const popup = new Popup({ offset: [0, -20] });
+          <pre><code class="javascript">const popup = new Popup({ offset: [0, -32] });
 map.addOverlay(popup);
 
-function showPopup() {
-  popup.show(marker.getPosition(),
-    'A pretty CSS3 popup.<br> Easily customizable.');
-}
-showPopup();
-marker.getElement().addEventListener('click', showPopup);</code></pre>
-          <p>Popup: Matt Walkers 3d Party Library <a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
+marker.on('click', () => popup.show([-0.09, 51.5],
+  'A pretty CSS3 popup.<br> Easily customizable.'));
+marker.dispatchEvent('click');</code></pre>
+          <p>Popup: Matt Walkers 3d Party Library<br><a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
         </section>
 
         <section>

@@ -14,6 +14,7 @@
   "dependencies": {
     "ol": "^6.12.1-dev.1644407556638",
     "ol-hashed": "^2.1.0",
+    "ol-marker-feature": "^1.0.2",
     "ol-popup": "^4.0.0",
     "proj4": "^2.7.5",
     "reveal.js": "^4.2.1"

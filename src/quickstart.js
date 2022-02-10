@@ -1,13 +1,10 @@
 import 'ol/ol.css';
 import 'ol-popup/src/ol-popup.css';
-import { Feature, Map, Overlay, View } from 'ol';
+import { Map, Overlay, View } from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import { useGeographic } from 'ol/proj';
 import { OSM } from 'ol/source';
-import VectorLayer from 'ol/layer/Vector';
-import { Point } from 'ol/geom';
-import VectorSource from 'ol/source/Vector';
-import { Style, Icon} from 'ol/style';
+import Marker from 'ol-marker-feature';
 import Popup from 'ol-popup';
 
 useGeographic();
@@ -21,24 +18,13 @@ const map = new Map({
 
 map.addLayer(new TileLayer({ source: new OSM() }));
 
-const icon = document.createElement('img');
-icon.src = './marker.png';
-icon.style.cursor = 'pointer';
-const marker = new Overlay({
-  position: lonlat,
-  positioning: 'bottom-center',
-  element: icon,
-  stopEvent: false,
-});
-map.addOverlay(marker);
+const marker = new Marker({ position: lonlat });
+marker.setMap(map);
 
-const popup = new Popup({ offset: [0, -20] });
+const popup = new Popup({ offset: [0, -32] });
 map.addOverlay(popup);
 
-function showPopup() {
-  popup.show(marker.getPosition(),
-    'A pretty CSS3 popup.<br> Easily customizable.');
-}
-showPopup();
-marker.getElement().addEventListener('click', showPopup);
+marker.on('click', () => popup.show(lonlat,
+  'A pretty CSS3 popup.<br> Easily customizable.'));
+marker.dispatchEvent('click');
 
