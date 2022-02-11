@@ -10,7 +10,7 @@ import { defaults as defaultInteractions, Modify } from 'ol/interaction';
 import TileLayer from 'ol/layer/Tile';
 import Style from 'ol/style/Style';
 import Stroke from 'ol/style/Stroke';
-import { getSquaredTolerance } from 'ol/renderer/Vector'
+import { getSquaredTolerance } from 'ol/renderer/vector'
 
 const radius = 10e6;
 const cos30 = Math.cos(Math.PI / 6);
