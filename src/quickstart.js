@@ -18,7 +18,7 @@ const map = new Map({
 
 map.addLayer(new TileLayer({ source: new OSM() }));
 
-const marker = new Marker({ position: lonlat });
+const marker = new Marker(lonlat);
 marker.setMap(map);
 
 const popup = new Popup({ offset: [0, -32] });
