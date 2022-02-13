@@ -11,7 +11,7 @@ const map = new Map({
   target: 'map',
   layers: [
     new MapboxVectorLayer({
-      styleUrl: 'https://api.maptiler.com/maps/osm-standard/style.json?key=' + key
+      styleUrl: 'https://api.maptiler.com/maps/streets/style.json?key=' + key
     })
   ],
   view: new View({

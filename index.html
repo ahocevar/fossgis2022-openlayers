@@ -388,7 +388,7 @@ marker.setMap(map);</code></pre>
           <pre><code class="javascript">const popup = new Popup({ offset: [0, -32] });
 map.addOverlay(popup);
 
-marker.on('click', () => popup.show(marker.getPosition(),
+marker.on('click', () => popup.show(marker.getLocation(),
   'A pretty CSS3 popup.<br> Easily customizable.'));
 marker.dispatchEvent('click');</code></pre>
           <p>Popup: Matt Walkers 3d Party Library<br><a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
@@ -412,7 +412,7 @@ marker.dispatchEvent('click');</code></pre>
                   <li>Style<br><small>Rich Text Labels</small></li>
                   <li>Performance<br><small>Mehr Web Worker, mehr WebGL</small></li>
                   <li>Standards<br><small>Aspekte von OGC APIs, STAC + Extensions</small></li>
-                  <li>Typings<br><small>Strict Null Checks</small></li>
+                  <li>Typings<br><small>Strict Null Checks, Union Types statt enums</small></li>
                   <li>+ Eure Beiträge 👼</li>
                   <li>…</li>
                 </ul>
