@@ -12,9 +12,9 @@
     <meta name="description" content="Neues und Unbekanntes in OpenLayers | Vortrag auf der FOSSGIS 2022, Online-Event" />
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
-    <script type="module" crossorigin src="assets/index.html.402ce447.js"></script>
+    <script type="module" crossorigin src="assets/index.html.1d252382.js"></script>
     <link rel="modulepreload" href="assets/modulepreload-polyfill.b7f2da20.js">
-    <link rel="modulepreload" href="assets/vendor.889ebfc4.js">
+    <link rel="modulepreload" href="assets/vendor.366de2bf.js">
     <link rel="stylesheet" href="assets/index.html.9bffc87b.css">
   </head>
   <body>
@@ -50,7 +50,7 @@
           <h2>Gliederung</h2>
           <ul>
             <li>&Uuml;ber / Meta 🤏</li>
-            <li>Live Demo 🤩</li>
+            <li>Beispiele 🤩</li>
             <li>Ausblick 👀</li>
           </ul>
         </section>
@@ -74,10 +74,10 @@
             <div class="part" style="width:60%">
               <div class="enumeration">
                 <ul>
-                  <li>Gesch&auml;ftsf&uuml;hrer @terrestris &amp; @mundialis</li>
+                  <li>Gesch&auml;ftsf&uuml;hrer <a href="https://www.terrestris.de/">terrestris</a>
+                    &amp; <a href="https://www.mundialis.de/">mundialis</a></li>
                   <li>Kernentwickler &amp; PSC OpenLayers</li>
-                  <li>GeoExt, SHOGun, GeoStyler</li>
-                  <!-- <li>Buchautor "OpenLayers"</li> -->
+                  <li>GeoExt, SHOGun, GeoStyler …</li>
                   <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
                   <li>OSGeo Foundation Charter Member</li>
                 </ul>
@@ -85,37 +85,6 @@
             </div>
           </div>
           <div style="clear:both"></div>
-        </section>
-
-        <section id="about-company-terrestris">
-          <h2>terrestris</h2>
-          <div class="split-info">
-            <div class="part" style="width:35%">
-              <img src="./img/terrestris-logo-normal.svg" class="plain" width="400"/>
-              <br /><small>
-              <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
-              <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
-              <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
-            </small>
-            </div>
-            <div class="part" style="width:60%">
-              <div class="enumeration">
-                <ul>
-                  <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
-                  <li>OpenSource GIS aus Bonn</li>
-                  <li>Entwicklung, Projekte &amp; Support/Schulung</li>
-                  <li>Beratung, Planung, Implementierung &amp; Wartung</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div style="clear:both"></div>
-        </section>
-
-        <section id="were-hiring">
-          <h3>Teil des Teams werden?</h3>
-          <h1 style="font-size: 2.2em; margin: 1em 0;">mundialis &amp; terrestris suchen Verstärkung</h1>
-          <h3>👉 Kontaktiert uns 🚀</h3>
         </section>
 
         <section id="author-andreas-hocevar">
@@ -133,10 +102,9 @@
             <div class="part" style="width:60%">
               <div class="enumeration">
                 <ul>
-                  <li>OpenLayers Kernentwickler und im Steering Committee</lI>
-                  <li>Proj4js Maintainer und Entwickler</li>
-                  <li>ol-mapbox-style Maintainer und Entwickler</li>
+                  <li>Kernentwickler & Maintainer mehrerer FOSSGIS Projekte</li>
                   <li>Professioneller OpenLayers Support</li>
+                  <li>Mitbegründer von <a target="blank" href="https://w3geo.at">w3geo.at</a></li>
                 </ul>
               </div>
             </div>
@@ -149,7 +117,7 @@
           <blockquote lang="en">
             A high-performance, <span class="highlight">feature-packed</span> library for all your mapping
             needs.
-            <footer>&mdash; <cite><a href="https://openlayers.org/">openlayers.org, 28. Mai 2021</a></cite></footer>
+            <footer>&mdash; <cite><a href="https://openlayers.org/">openlayers.org, 04. Februar 2022</a></cite></footer>
           </blockquote>
           <ul>
             <li>OpenSource (BSD)</li>
@@ -158,200 +126,276 @@
           </ul>
         </section>
 
+        <section>
+          <h2>Grundkonzepte</h2>
+          <ul>
+            <li>Überlagern von Karten aus verschiedenen Quellen</li>
+            <li>Navigieren im Kartenfenster</li>
+            <li>Interaktion mit den zugrundeliegenden Daten</li>
+            <li>Daten- und auflösungsabhängige Darstellung</li>
+            <li>Manipulation von Darstellung und Daten</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Anwendungsbereiche</h2>
+          <ul>
+            <li>Geographie, Kartographie, Vermessung, GIS, ...</li>
+            <li>Photographie, Archivierung</li>
+            <li>Medizin, Mikroskopie</li>
+            <li>Online Games</li>
+          </ul>
+        </section>
+
         <section data-background-video="./img/examples.mp4" data-background-size="contain">
           <div style="background-color: #ffffff77; color: black; border-radius: 1em; margin-top:6em; text-shadow: 1px 1px #ffffff;">
             <ul>
-              <li>Viele Daten- &amp; Layerquellen</li>
+              <li>Viele unterstützte Datenformate</li>
               <li>Interaktionen &amp; Steuerelemente</li>
               <li>Aktiv entwickelt &amp; große Community</li>
               <li>Gut dokumentiert &amp; viele Beispiele</li>
-              <li>Universell einsetzbar</li>
+              <li>Umfangreiches, flexibles API</li>
             </ul>
           </div>
         </section>
 
         <section>
-          <h1>Live Demo 🤩</h1>
+          <h2>Historisches</h2>
+          <p>2006: v2 + OSM = 1. freie Alternative zu Google Maps</p>
+          <p>2012-2014 v3: Komplettes Rewrite mit neuem API</p>
+          <p>2014-2017: Krise! Kein Upgradepfad von v2 auf v3</p>
+          <p>2017 v4: Wir gewinnen wieder Vertrauen und Nutzer</p>
+          <p>2022 v6.13: Wir sind immer noch da, aktiver denn je!</p>
         </section>
 
         <section>
-          <h2>Immediate Rendering</h2>
+          <h1>Beispiele 🤩</h1>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Beispiele für Performance-Optimierungen</p>
           <ul>
-            <li>Zugriff auf den Render Context des Layers</li>
-            <li>Zeichnen mit OpenLayers Geometrien und Styles</li>
-            <li>Koordinatensystem der View</li>
+            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
+            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
           </ul>
-          <pre><code class="javascript">import toContext from 'ol/render';
-layer.on('postrender', event => {
-  const immediate = getVectorContext(event);
-  immediate.setImageStyle(myCircleStyle);
-  immediate.drawPoint(myPointGeometry);
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Und was habe ich davon?</p>
+          <ul>
+            <li>Gute Render-Performance auch ohne WebGL</li>
+            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <iframe src="./modify.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Multi-Source Layer</h2>
+          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
+        </section>
+
+        <section>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Multi-Source Layer</h2>
+          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
+          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
+  sources: sourcesFromTileGrid(
+    tileGrid,
+    ([z, x, y]) => new GeoTIFFSource({
+      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
+    })
+  ),
 });</code></pre>
         </section>
 
         <section>
-          <h2>Immediate Rendering</h2>
-          <ul>
-            <li>Zugriff auf den Canvas Context des Layers</li>
-            <li>Zeichnen mit dem Canvas 2D API</li>
-            <li>Pixel-Koordinatensystem des Canvas</li>
-          </ul>
-          <pre><code class="javascript">layer.on('postrender', event => {
-  const context = event.context;
-  const canvas = context.canvas;
-  const center = [canvas.width / 2, canvas.height / 2];
-  context.beginPath();
-  context.moveTo(center[0] + 50, center[1] - 50);
-  context.lineTo(center[0] - 50, center[1] - 50);
-  context.lineTo(center[0] - 50, center[1] + 50);
-  context.lineTo(center[0] + 50, center[1] + 50);
-  context.closePath();
-  context.fillStyle = 'rgba(50,170,50,0.5)';
-  context.fill();
+          <h2>Multi-Source Layer</h2>
+          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <iframe src="./elevation.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <p>Band Math - Rechnen mit RGB</p>
+          <pre><code class="javascript">// elevation = -10000 + ((R * 256 * 256 + G * 256 + B) * 0.1)
+
+const elevation = [
+  '+',
+  -10000,
+  ['*',
+    ['+',
+      ['*', 256 * 256, ['band', 1]],
+      ['+', ['*', 256, ['band', 2]],
+      ['band', 3]]
+    ],
+    0.1 * 255,
+  ],
+];</code></pre>
+        </section>
+
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <p>Style Variablen</p>
+          <pre><code class="javascript">const style = {
+  variables: {
+    stauziel: 368,
+  },
+  color: [
+    'case',
+    ['&lt;=', elevation, ['var', 'stauziel']],
+    [139, 212, 255, 1],
+    [139, 212, 255, 0],
+  ],
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>WebGL Data Tiles</h2>
+          <p>Aktualisierung nach User-Interaktion</p>
+          <pre><code class="javascript">slider.addEventListener('input', () => {
+  layer.updateStyleVariables({
+    stauziel: parseFloat(slider.value)
+  });
 });</code></pre>
         </section>
 
         <section>
-          <h2>Immediate Rendering</h2>
-          <iframe src="./bike-track.html" class="plain stretch"></iframe>
+          <h2>Mehr Rechnen…</h2>
+          <iframe src="./germany.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Vector Tiles etc.</h2>
-          <ul>
-            <li>Ideal für thematische Karten</li>
-            <li>Mapbox Vector Tiles und Mapbox Style</li>
-          </ul>
-          <pre><code class="javascript">import MVT from 'ol/format/MVT';
-import createStyle from 'ol-mapbox-style/dist/stylefunction';
-
-const bodenkarte = new VectorTileLayer({
-  source: new VectorTileSource({
-    format: new MVT(),
-    url: myVectorTileServiceUrl
-  })
-});
-
-bodenkarte.setStyle(
-  createStyle(bodenkarte, myMapboxStyle, 'bodenkarte-tiles')
-);</code></pre>
+          <p>Welche Pixel haben sich geändert?</p>
+          <pre><code class="javascript">{
+  color: [
+    'case',
+    ['==', ['band', 1], ['band', 2]],
+    [0, 0, 0, 0], // equal
+    [255, 165, 0, 0.8] // different
+  ]
+}</code></pre>
         </section>
 
         <section>
-          <h2>Vector Tiles</h2>
-          <iframe src="./bodenkarte.html" class="plain stretch"></iframe>
+          <h2>Layer#getData()</h2>
+          <iframe src="./cog-math.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Mapbox Style</h2>
-          <ul>
-            <li>Nicht nur für Vector Tile Layer</li>
-            <li>Beschreibt eine komplette Karte (Center, Zoom, Layer, Styles)</li>
-            <li>In OpenLayers verfügbar mit <a href="https://npmjs.com/package/ol-mapbox-style">ol-mapbox-style</a></li>
-          </ul>
-          <pre><code class="javascript">import olms from 'ol-mapbox-style';
+          <h2>Layer#getData()</h2>
+          <p>Rohdaten abfragen</p>
+          <pre><code class="javascript">  const data = layer.getData(event.pixel);
+  if (!data) {
+    return;
+  }
 
-olms('map', 'https://mymap.com/mystyle.json');</code></pre>
+  const red = data[0];
+  const nir = data[1];
+  const ndvi = (nir - red) / (nir + red);</code></pre>
         </section>
 
         <section>
           <h2>Vector Tiles</h2>
+          <p><b>Mapbox Vector Tiles + Mapbox Style</b><br>
+          (Mapbox, Maptiler, Geoapify, Carto, Esri, ...)</p>
+          <pre><code class="javascript">import MapboxVectorLayer from 'ol/layer/MapboxVector.js';
+
+const layer = new MapboxVectorLayer({
+  styleUrl: 'https://api.maptiler.com/maps/osm-standard/style.json?key=' + key
+});</code></pre>
+        </section>
+
+        <section>
+          <h2>Vector Tiles</h2>
+          <iframe src="./vector-tiles.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Lokale Projektionen</h2>
+          <p>OpenLayers kann Karten beliebig umprojizieren.<br>
+          Auch Rasterlayer 💪</p>
+          <p>Aber brauche ich das?</p>
+          <p>Wahrscheinlich nicht!</p>
+        </section>
+
+        <section>
+          <h2>Lokale Projektionen</h2>
+          <pre><code class="javascript">import proj4 from "proj4";
+import { register } from "ol/proj/proj4.js";
+import { setUserProjection } from "ol/proj.js";
+
+proj4.defs('EPSG:31259', '+proj=tmerc +lat_0=0 +lon_0=16.33333333333333 +k=1 +x_0=750000 +y_0=-5000000 +ellps=bessel +towgs84=577.326,90.129,463.919,5.137,1.474,5.297,2.4232 +units=m +no_defs');
+register(proj4);
+
+setUserProjection('EPSG:31259');</code></pre>
+          <p>Von nun an ist alles in <b>MGI / Austria GK M34</b> 🎉<br>
+          Nur die Karte bleibt in Web Mercator ✅</p>
+        </section>
+
+        <section>
+          <h2>Lokale Projektionen</h2>
           <iframe src="./basemap.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Raster Analyse</h2>
-          <ul>
-            <li>Raster Source mit einer <code>operation</code></li>
-          </ul>
-          <pre><code style="font-size: 17px;" class="javascript">function flood(pixels, data) {
-  const pixel = pixels[0];
-  if (pixel[3]) {
-    const height =
-      -10000 + (pixel[0] * 256 * 256 + pixel[1] * 256 + pixel[2]) * 0.1;
-    if (height &lt;= data.level) {
-      pixel[0] = 134; pixel[1] = 203; pixel[2] = 249; pixel[3] = 255;
-    } else {
-      pixel[3] = 0;
-    }
-  }
-  return pixel;
-}
+          <h2>Leaflet ist einfacher</h2>
+          <iframe src="./quickstart.html" class="plain stretch"></iframe>
+        </section>
 
-const raster = new RasterSource({
-  sources: [elevation],
-  operation: flood,
+        <section>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">const map = L.map('map').setView([51.505, -0.09], 13);</code></pre>
+          <pre><code class="javascript">useGeographic();
+
+const map = new Map({
+  target: 'map',
+  view: new View({ center: [-0.09, 51.505], zoom: 13 })
 });</code></pre>
         </section>
 
         <section>
-          <h2>Raster Analyse</h2>
-          <iframe src="./sea-level.html" class="plain stretch"></iframe>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);</code></pre>
+          <pre><code class="javascript">map.addLayer(new TileLayer({ source: new OSM() }));</code></pre>
         </section>
 
         <section>
-          <h2>Reprojektion</h2>
-          <ul>
-            <li>Raster- und Vektorquellen</li>
-          </ul>
-          <iframe src="./reprojection.html" class="plain stretch"></iframe>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">const marker = L.marker([51.5, -0.09]);
+marker.addTo(map);</code></pre>
+          <pre><code class="javascript">const marker = new Marker([-0.09, 51.5]);
+marker.setMap(map);</code></pre>
+          <p>Marker: Andreas Hocevars 3d Party Library<br><a href="https://www.npmjs.com/package/ol-marker-feature">ol-marker-feature</a></p>
         </section>
 
         <section>
-          <h2>Vektordaten</h2>
-          <ul>
-            <li>KML Beispiel</li>
-          </ul>
-          <iframe src="./kml.html" class="plain stretch"></iframe>
-        </section>
+          <h2>Leaflet ist einfacher</h2>
+          <pre><code class="javascript">marker
+  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+  .openPopup();</code></pre>
+          <pre><code class="javascript">const popup = new Popup({ offset: [0, -32] });
+map.addOverlay(popup);
 
-        <section>
-          <h2>Vektordaten</h2>
-          <ul>
-            <li>Vergleich mit <a href="https://www.gpsvisualizer.com/">GPS Visualizer</a> Darstellung</li>
-          </ul>
-          <img src="./img/kml-on-gmaps.png" class="plain stretch" />
-        </section>
-
-        <section>
-          <h2>Feature Editierung</h2>
-          <ul>
-            <li>~60 Zeilen Code</li>
-          </ul>
-          <iframe src="./editor.html" class="plain stretch"></iframe>
-        </section>
-
-        <section>
-          <h2>…in Entwicklung</h2>
-          <ul>
-            <li>aktueller <a href="https://github.com/openlayers/openlayers/pull/12304">PR #12304</a></li>
-          </ul>
-          <iframe src="https://deploy-preview-12304--ol-site.netlify.app/examples/modify-scale-and-rotate.html" class="plain stretch"></iframe>
-        </section>
-        
-        <section>
-          <h2>3rd party</h2>
-          <iframe src="http://viglino.github.io/ol-ext/examples/storymap/map.historical.html" class="plain stretch"></iframe>
-        </section>
-
-        <section>
-          <h2>3rd party</h2>
-          <iframe src="http://viglino.github.io/ol-ext/examples/canvas/map.control.printdialog.html" class="plain stretch"></iframe>
-        </section>
-
-        <section>
-          <h2>Integrationen</h2>
-          <ul>
-            <li><a href="https://openlayers.org/3rd-party/">openlayers.org/3rd-party/</a></li>
-            <li>daneben zahlreiche andere <ul>
-              <li><a href="https://geoext.github.io/geoext/">GeoExt</a></li>
-              <li><a href="https://github.com/terrestris/react-geo">react-geo</a></li>
-              <li><a href="https://github.com/meggsimum/wegue">Wegue</a></li>
-              <li><a href="https://github.com/omniscale/anol">AnOL</a>, oder <a href="https://dev.to/camptocamp-geo/openlayers-in-an-angular-application-mn1">c2c</a></li>
-              <li><a href="https://www.masterportal.org/home.html">masterportal</a></li>
-              <li>usw. usf.</li>
-            </ul></li>
-          </ul>
+marker.on('click', () => popup.show(marker.getPosition(),
+  'A pretty CSS3 popup.<br> Easily customizable.'));
+marker.dispatchEvent('click');</code></pre>
+          <p>Popup: Matt Walkers 3d Party Library<br><a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
         </section>
 
         <section>
@@ -359,27 +403,7 @@ const raster = new RasterSource({
         </section>
 
         <section>
-          <h2>NDVI mit COG</h2>
-          <iframe src="https://deploy-preview-12008--ol-site.netlify.app/examples/cog-math.html" class="plain stretch"></iframe>
-        </section>
-
-        <section>
           <h2>Zukünftige Features</h2>
-          <!--
-
-            COG
-            NDVU
-            Overviews usw. usf.
-
-            https://deploy-preview-12008--ol-site.netlify.app/examples/cog.html
-            https://deploy-preview-12008--ol-site.netlify.app/examples/cog-math.html
-            https://deploy-preview-12008--ol-site.netlify.app/examples/cog-overviews.html
-
-
-            OGC API https://github.com/openlayers/openlayers/pull/10963
-
-
-          -->
           <div class="split-info">
             <div class="part" style="width:35%">
               <img src="./img/26079227405_e8d56ff31c_o.jpg" class="plain" width="400"/>
@@ -389,12 +413,10 @@ const raster = new RasterSource({
             <div class="part" style="width:60%">
               <div class="enumeration">
                 <ul>
-                  <li>geotiff.js Integration</li>
-                  <li><a href="https://github.com/openlayers/openlayers/pull/12008">mehr WebGL</a></li>
-                  <li>&rArr; COG Support, s.o.</li>
-                  <li><a href="https://github.com/openlayers/openlayers/pull/10963">OGC API</a></li>
-                  <li><a href="https://github.com/openlayers/openlayers/pull/12223">(noch) besseres Typing &amp; API-docs</a></li>
-                  <li>Bessere Node.js Integration</li>
+                  <li>Style<br><small>Rich Text Labels</small></li>
+                  <li>Performance<br><small>Mehr Web Worker, mehr WebGL</small></li>
+                  <li>Standards<br><small>Aspekte von OGC APIs, STAC + Extensions</small></li>
+                  <li>Typings<br><small>Strict Null Checks</small></li>
                   <li>+ Eure Beiträge 👼</li>
                   <li>…</li>
                 </ul>

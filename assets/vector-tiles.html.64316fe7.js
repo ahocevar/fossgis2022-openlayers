@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill.b7f2da20.js";/* empty css           */import{M as e,R as o,V as a,h as s,o as r}from"./vendor.366de2bf.js";const t="Sla0LBbfUvXVwh1Gu8j5",m=new e({target:"map",layers:[new o({styleUrl:"https://api.maptiler.com/maps/osm-standard/style.json?key="+t})],view:new a({center:s([8.77,50.8149]),zoom:16})});r(m);
