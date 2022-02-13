@@ -242,6 +242,7 @@ const elevation = [
   ],
 ];</code></pre>
         </section>
+
         <section>
           <h2>WebGL Data Tiles</h2>
           <p>Style Variablen</p>
@@ -266,6 +267,41 @@ const elevation = [
     stauziel: parseFloat(slider.value)
   });
 });</code></pre>
+        </section>
+
+        <section>
+          <h2>Mehr Rechnen…</h2>
+          <iframe src="./germany.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <p>Welche Pixel haben sich geändert?</p>
+          <pre><code class="javascript">{
+  color: [
+    'case',
+    ['==', ['band', 1], ['band', 2]],
+    [0, 0, 0, 0], // equal
+    [255, 165, 0, 0.8] // different
+  ]
+}</code></pre>
+        </section>
+
+        <section>
+          <h2>Layer#getData()</h2>
+          <iframe src="./cog-math.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Layer#getData()</h2>
+          <p>Rohdaten abfragen</p>
+          <pre><code class="javascript">  const data = layer.getData(event.pixel);
+  if (!data) {
+    return;
+  }
+
+  const red = data[0];
+  const nir = data[1];
+  const ndvi = (nir - red) / (nir + red);</code></pre>
         </section>
 
         <section>
@@ -360,11 +396,6 @@ marker.dispatchEvent('click');</code></pre>
 
         <section>
           <h1>Ausblick 👀</h1>
-        </section>
-
-        <section>
-          <h2>Layer#getData()</h2>
-          <p>Marc</p>
         </section>
 
         <section>
