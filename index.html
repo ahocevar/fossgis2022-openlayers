@@ -169,56 +169,40 @@
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <p>Beispiele für Performance-Optimierungen</p>
-          <ul>
-            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
-            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
-          </ul>
+          <h2>Rechnen mit Pixeln…</h2>
+          <iframe src="./germany.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <p>Und was habe ich davon?</p>
-          <ul>
-            <li>Gute Render-Performance auch ohne WebGL</li>
-            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
-          </ul>
+          <p>Welche Pixel haben sich geändert?</p>
+          <pre><code class="javascript">{
+  color: [
+    'case',
+    ['==', ['band', 1], ['band', 2]],
+    [0, 0, 0, 0], // equal
+    [255, 165, 0, 0.8] // different
+  ]
+}</code></pre>
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <iframe src="./modify.html" class="plain stretch"></iframe>
+          <h2>Layer#getData()</h2>
+          <iframe src="./cog-math.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Multi-Source Layer</h2>
-          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
-        </section>
+          <h2>Layer#getData()</h2>
+          <p>Rohdaten abfragen</p>
+          <pre><code class="javascript">  const data = layer.getData(event.pixel);
+  if (!data) {
+    return;
+  }
 
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
+  const red = data[0];
+  const nir = data[1];
+  const ndvi = (nir - red) / (nir + red);</code></pre>
         </section>
-
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
-          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
-  sources: sourcesFromTileGrid(
-    tileGrid,
-    ([z, x, y]) => new GeoTIFFSource({
-      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
-    })
-  ),
-});</code></pre>
-        </section>
-
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
-        </section>
-
+        
         <section>
           <h2>WebGL Data Tiles</h2>
           <iframe src="./elevation.html" class="plain stretch"></iframe>
@@ -270,38 +254,31 @@ const elevation = [
         </section>
 
         <section>
-          <h2>Mehr Rechnen…</h2>
-          <iframe src="./germany.html" class="plain stretch"></iframe>
+          <h2>Multi-Source Layer</h2>
+          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
         </section>
 
         <section>
-          <p>Welche Pixel haben sich geändert?</p>
-          <pre><code class="javascript">{
-  color: [
-    'case',
-    ['==', ['band', 1], ['band', 2]],
-    [0, 0, 0, 0], // equal
-    [255, 165, 0, 0.8] // different
-  ]
-}</code></pre>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Layer#getData()</h2>
-          <iframe src="./cog-math.html" class="plain stretch"></iframe>
+          <h2>Multi-Source Layer</h2>
+          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
+          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
+  sources: sourcesFromTileGrid(
+    tileGrid,
+    ([z, x, y]) => new GeoTIFFSource({
+      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
+    })
+  ),
+});</code></pre>
         </section>
 
         <section>
-          <h2>Layer#getData()</h2>
-          <p>Rohdaten abfragen</p>
-          <pre><code class="javascript">  const data = layer.getData(event.pixel);
-  if (!data) {
-    return;
-  }
-
-  const red = data[0];
-  const nir = data[1];
-  const ndvi = (nir - red) / (nir + red);</code></pre>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
         </section>
 
         <section>
@@ -318,6 +295,29 @@ const layer = new MapboxVectorLayer({
         <section>
           <h2>Vector Tiles</h2>
           <iframe src="./vector-tiles.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Beispiele für Performance-Optimierungen</p>
+          <ul>
+            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
+            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Und was habe ich davon?</p>
+          <ul>
+            <li>Gute Render-Performance auch ohne WebGL</li>
+            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <iframe src="./modify.html" class="plain stretch"></iframe>
         </section>
 
         <section>
