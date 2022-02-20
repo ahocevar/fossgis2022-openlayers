@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill.b7f2da20.js";/* empty css           */import{M as e,R as o,V as a,h as s,o as t}from"./vendor.d7de2b27.js";const r="Sla0LBbfUvXVwh1Gu8j5",p=new e({target:"map",layers:[new o({styleUrl:"https://api.maptiler.com/maps/streets/style.json?key="+r})],view:new a({center:s([8.77,50.8149]),zoom:16})});t(p);

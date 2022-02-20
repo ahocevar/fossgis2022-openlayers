@@ -12,9 +12,9 @@
     <meta name="description" content="Neues und Unbekanntes in OpenLayers | Vortrag auf der FOSSGIS 2022, Online-Event" />
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
-    <script type="module" crossorigin src="assets/index.html.1d252382.js"></script>
+    <script type="module" crossorigin src="assets/index.html.9c9dd698.js"></script>
     <link rel="modulepreload" href="assets/modulepreload-polyfill.b7f2da20.js">
-    <link rel="modulepreload" href="assets/vendor.366de2bf.js">
+    <link rel="modulepreload" href="assets/vendor.d7de2b27.js">
     <link rel="stylesheet" href="assets/index.html.9bffc87b.css">
   </head>
   <body>
@@ -146,7 +146,7 @@
             <li>Online Games</li>
           </ul>
         </section>
-
+<!--
         <section data-background-video="./img/examples.mp4" data-background-size="contain">
           <div style="background-color: #ffffff77; color: black; border-radius: 1em; margin-top:6em; text-shadow: 1px 1px #ffffff;">
             <ul>
@@ -158,7 +158,7 @@
             </ul>
           </div>
         </section>
-
+-->
         <section>
           <h2>Historisches</h2>
           <p>2006: v2 + OSM = 1. freie Alternative zu Google Maps</p>
@@ -173,56 +173,40 @@
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <p>Beispiele für Performance-Optimierungen</p>
-          <ul>
-            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
-            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
-          </ul>
+          <h2>Rechnen mit Pixeln…</h2>
+          <iframe src="./germany.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <p>Und was habe ich davon?</p>
-          <ul>
-            <li>Gute Render-Performance auch ohne WebGL</li>
-            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
-          </ul>
+          <p>Welche Pixel haben sich geändert?</p>
+          <pre><code class="javascript">{
+  color: [
+    'case',
+    ['==', ['band', 1], ['band', 2]],
+    [0, 0, 0, 0], // equal
+    [255, 165, 0, 0.8] // different
+  ]
+}</code></pre>
         </section>
 
         <section>
-          <h2>Simplify & Modify</h2>
-          <iframe src="./modify.html" class="plain stretch"></iframe>
+          <h2>Layer#getData()</h2>
+          <iframe src="./cog-math.html" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Multi-Source Layer</h2>
-          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
-        </section>
+          <h2>Layer#getData()</h2>
+          <p>Rohdaten abfragen</p>
+          <pre><code class="javascript">  const data = layer.getData(event.pixel);
+  if (!data) {
+    return;
+  }
 
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
+  const red = data[0];
+  const nir = data[1];
+  const ndvi = (nir - red) / (nir + red);</code></pre>
         </section>
-
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
-          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
-  sources: sourcesFromTileGrid(
-    tileGrid,
-    ([z, x, y]) => new GeoTIFFSource({
-      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
-    })
-  ),
-});</code></pre>
-        </section>
-
-        <section>
-          <h2>Multi-Source Layer</h2>
-          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
-        </section>
-
+        
         <section>
           <h2>WebGL Data Tiles</h2>
           <iframe src="./elevation.html" class="plain stretch"></iframe>
@@ -274,38 +258,31 @@ const elevation = [
         </section>
 
         <section>
-          <h2>Mehr Rechnen…</h2>
-          <iframe src="./germany.html" class="plain stretch"></iframe>
+          <h2>Multi-Source Layer</h2>
+          <p>Schon mal in der Situation gewesen, für einen Layer je nach Zoom und Ausschnitt unterschiedliche Sources verwenden zu wollen?</p>
         </section>
 
         <section>
-          <p>Welche Pixel haben sich geändert?</p>
-          <pre><code class="javascript">{
-  color: [
-    'case',
-    ['==', ['band', 1], ['band', 2]],
-    [0, 0, 0, 0], // equal
-    [255, 165, 0, 0.8] // different
-  ]
-}</code></pre>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="https://lifegate.idiv.de/about.html.de" class="plain stretch"></iframe>
         </section>
 
         <section>
-          <h2>Layer#getData()</h2>
-          <iframe src="./cog-math.html" class="plain stretch"></iframe>
+          <h2>Multi-Source Layer</h2>
+          <p><a href="https://github.com/stac-extensions/tiled-assets" target="_blank">STAC Tiled Assets Extension</a></p>
+          <pre><code class="javascript">const pyramid = new WebGLTileLayer({
+  sources: sourcesFromTileGrid(
+    tileGrid,
+    ([z, x, y]) => new GeoTIFFSource({
+      sources: [ { url: `./data/${z}/${y}/${x}.tif` } ],
+    })
+  ),
+});</code></pre>
         </section>
 
         <section>
-          <h2>Layer#getData()</h2>
-          <p>Rohdaten abfragen</p>
-          <pre><code class="javascript">  const data = layer.getData(event.pixel);
-  if (!data) {
-    return;
-  }
-
-  const red = data[0];
-  const nir = data[1];
-  const ndvi = (nir - red) / (nir + red);</code></pre>
+          <h2>Multi-Source Layer</h2>
+          <iframe src="./multisource-layer.html" class="plain stretch"></iframe>
         </section>
 
         <section>
@@ -315,13 +292,36 @@ const elevation = [
           <pre><code class="javascript">import MapboxVectorLayer from 'ol/layer/MapboxVector.js';
 
 const layer = new MapboxVectorLayer({
-  styleUrl: 'https://api.maptiler.com/maps/osm-standard/style.json?key=' + key
+  styleUrl: 'https://api.maptiler.com/maps/streets/style.json?key=' + key
 });</code></pre>
         </section>
 
         <section>
           <h2>Vector Tiles</h2>
           <iframe src="./vector-tiles.html" class="plain stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Beispiele für Performance-Optimierungen</p>
+          <ul>
+            <li>Vektordaten-Reduktion beim Rendern (Douglas-Peucker, Quantizing)</li>
+            <li>Modify Interaction arbeitet segmentbasiert mit RTree von Vertices</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <p>Und was habe ich davon?</p>
+          <ul>
+            <li>Gute Render-Performance auch ohne WebGL</li>
+            <li>Bearbeiten von Geometrien mit 10x mehr Vertices als mit mapbox-gl-draw</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Simplify & Modify</h2>
+          <iframe src="./modify.html" class="plain stretch"></iframe>
         </section>
 
         <section>
@@ -392,7 +392,7 @@ marker.setMap(map);</code></pre>
           <pre><code class="javascript">const popup = new Popup({ offset: [0, -32] });
 map.addOverlay(popup);
 
-marker.on('click', () => popup.show(marker.getPosition(),
+marker.on('click', () => popup.show(marker.getLocation(),
   'A pretty CSS3 popup.<br> Easily customizable.'));
 marker.dispatchEvent('click');</code></pre>
           <p>Popup: Matt Walkers 3d Party Library<br><a href="https://www.npmjs.com/package/ol-popup">ol-popup</a></p>
@@ -416,7 +416,7 @@ marker.dispatchEvent('click');</code></pre>
                   <li>Style<br><small>Rich Text Labels</small></li>
                   <li>Performance<br><small>Mehr Web Worker, mehr WebGL</small></li>
                   <li>Standards<br><small>Aspekte von OGC APIs, STAC + Extensions</small></li>
-                  <li>Typings<br><small>Strict Null Checks</small></li>
+                  <li>Typings<br><small>Strict Null Checks, Union Types statt enums</small></li>
                   <li>+ Eure Beiträge 👼</li>
                   <li>…</li>
                 </ul>
